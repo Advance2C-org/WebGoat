@@ -72,12 +72,14 @@ jobs:
       uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
-        config: |
-          paths-ignore:
-            - '**/*.test.js'
-          queries:
-            - uses: security-and-quality
-        build-mode: ${{ matrix.build-mode }}
+        config-file: Advance2C-org/security-team-codeql-config/codeql/codeql-config.yml
+        external-repository-token: ${{ secrets.ACCESS_TOKEN }}
+        #config: |
+         #paths-ignore:
+        #  - '**/*.test.js'
+       # queries:
+      #    - uses: security-and-quality
+      #  build-mode: ${{ matrix.build-mode }}
         # If you wish to specify custom queries, you can do so here or in a config file.
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
