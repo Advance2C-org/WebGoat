@@ -71,7 +71,8 @@ jobs:
     - name: Initialize CodeQL
   uses: github/codeql-action/init@v3
   with:
-    config-file: Advance2C-org/security-team-codeql-config/codeql/codeql-config.yml@main
+    languages: ${{ matrix.language }}
+    config-file: Advance2C-org/security-team-codeql-config/codeql/codeql-config.yml
     external-repository-token: ${{ secrets.ACCESS_TOKEN }}
         #config: |
          #paths-ignore:
